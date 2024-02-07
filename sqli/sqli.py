@@ -18,7 +18,8 @@ def create_and_populate_database():
 
 def vulnerable_query(username):
     # Vulnerable code with improperly escaped user input
-    query = "SELECT * FROM users WHERE username = '" + username + "'"
+    query = "SELECT * FROM users WHERE username = '" + username + "'" AND password = '" + password +"'
+    // I added a password field so that a user would have to enter both fields
 
     # Connecting to the database
     connection = sqlite3.connect("example.db")
